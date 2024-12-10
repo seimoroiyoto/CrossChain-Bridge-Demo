@@ -1,0 +1,54 @@
+{
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["prettier", "@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": ["node_modules", "src/"]
+            },
+            "typescript": {
+                "alwaysTryTypes": true
+            }
+        }
+    },
+    "rules": {
+        "import/no-cycle": "off",
+        "prefer-destructuring": "off",
+        "no-shadow": "off",
+        "no-console": "off",
+        "no-param-reassign": "off",
+        "no-underscore-dangle": "off",
+        "no-async-promise-executor": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/naming-convention": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "prettier/prettier": [
+            2,
+            {
+                "singleQuote": true,
+                "editor.formatOnSave": true,
+                "proseWrap": "always",
+                "requireConfig": false,
+                "useTabs": false,
+                "trailingComma": "none",
+                "bracketSpacing": true,
+                "jsxBracketSameLine": false,
+                "semi": true,
+                "tabWidth": 4,
+                "endOfLine": "auto"
+            }
+        ]
+    }
+}
